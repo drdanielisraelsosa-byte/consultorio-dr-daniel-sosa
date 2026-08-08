@@ -22,222 +22,459 @@
 <title>Dr. Daniel Israel Sosa de Santiago | Médico Cirujano · León, Gto.</title>
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-<style>
-:root{--primary:#0d5c63;--primary-dark:#084045;--gold:#c9a227;--gold-light:#e8d48b;--bg:#f7f9f9;--white:#fff;--text:#142426;--muted:#5a6e71;--danger:#b33a2e;--wa:#25d366;--border:#d5e0e2;--shadow:0 4px 20px rgba(13,92,99,.08);--radius:12px}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}.container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;gap:1rem}
-.logo-link{display:flex;align-items:center;gap:.75rem}.logo-link img{width:52px;height:52px;border-radius:8px;background:#000;object-fit:contain}
-.logo-text{font-weight:600;font-size:.95rem;color:var(--primary-dark);line-height:1.2}.logo-text span{display:block;font-size:.75rem;font-weight:400;color:var(--muted)}
-nav{display:none}nav a{font-size:.875rem;font-weight:500;color:var(--muted);padding:.4rem .75rem;border-radius:6px}nav a:hover{color:var(--primary);background:rgba(13,92,99,.08)}
-.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.65rem 1.15rem;border-radius:50px;font-weight:600;font-size:.875rem;border:none;cursor:pointer;transition:.2s}
-.btn:hover{transform:translateY(-1px)}.btn-wa{background:var(--wa);color:#fff}.btn-gold{background:linear-gradient(135deg,var(--gold),#a88b1a);color:var(--primary-dark)}.btn-primary{background:var(--primary);color:#fff}.btn-outline{border:2px solid var(--primary);color:var(--primary);background:transparent}
-#hero{background:linear-gradient(160deg,var(--primary),var(--primary-dark) 55%,#062a2e);color:#fff;padding:4rem 0 5rem}
-.hero-grid{display:grid;gap:2rem;align-items:center}
-.badge{display:inline-block;border:1px solid var(--gold);background:rgba(201,162,39,.18);color:var(--gold-light);padding:.3rem .9rem;border-radius:50px;font-size:.8rem;margin-bottom:1rem}
-#hero h1{font-family:"Playfair Display",serif;font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.2;margin-bottom:1rem}#hero h1 span{color:var(--gold-light)}
-.hero-sub{opacity:.92;max-width:520px;margin-bottom:1.5rem;font-size:1.05rem}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem}.hero-meta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:1.5rem;font-size:.9rem;opacity:.9}
-.hero-meta strong{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;opacity:.7}
-.hero-logo{justify-self:center;background:#000;padding:.75rem;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.35)}
-.hero-logo img{width:min(240px,70vw);height:auto;border-radius:12px}
-section{padding:4rem 0}.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.6rem,4vw,2.1rem);color:var(--primary-dark);text-align:center;margin-bottom:.5rem}
-.section-sub{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 2.5rem}
-.card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:1.35rem;box-shadow:var(--shadow)}
-#about{background:var(--white)}.about-grid{display:grid;gap:2rem;align-items:center}
-.about-logo{background:#000;padding:1rem;border-radius:16px;max-width:260px;margin:0 auto}
-.credentials{background:rgba(13,92,99,.05);border-left:4px solid var(--primary);padding:1rem 1.15rem;border-radius:0 8px 8px 0;margin:1.25rem 0;font-size:.9rem;color:var(--muted)}
-.services-grid{display:grid;gap:1.1rem}.service h3{color:var(--primary-dark);margin-bottom:.35rem;font-size:1.05rem}.service p{color:var(--muted);font-size:.9rem}
-#location{background:var(--white)}.location-grid{display:grid;gap:1.5rem}.map{border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;box-shadow:var(--shadow)}.map iframe{width:100%;height:100%;border:0}
-.amenidades{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1rem}.amenidad{background:rgba(13,92,99,.05);padding:.55rem .8rem;border-radius:8px;font-size:.9rem}
-#horarios{background:var(--bg)}.hours-grid{display:grid;gap:1.25rem}table{width:100%;border-collapse:collapse;font-size:.95rem}td{padding:.55rem 0;border-bottom:1px solid rgba(0,0,0,.06)}td:last-child{text-align:right;font-weight:600}
-.note{margin-top:1rem;padding:.75rem 1rem;border-radius:8px;font-size:.85rem;background:rgba(201,162,39,.12);color:var(--muted)}.note-danger{background:rgba(179,58,46,.1)}
-#reserva{background:linear-gradient(160deg,var(--primary),var(--primary-dark));color:#fff;text-align:center}#reserva .section-title{color:#fff}#reserva .section-sub{color:rgba(255,255,255,.88)}.reserva-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1.5rem}
-#contacto{background:var(--white)}.contact-item{display:flex;gap:1rem;align-items:center;background:var(--bg);padding:1rem 1.2rem;border-radius:var(--radius);margin-bottom:.75rem}
-.contact-icon{width:48px;height:48px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0}
-.socials{display:flex;justify-content:center;gap:1rem;margin-top:1.5rem}.social{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}.ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)}.fb{background:#1877f2}
-footer{background:#062a2e;color:rgba(255,255,255,.82);padding:2.5rem 0 1.5rem;font-size:.9rem}
-.footer-grid{display:grid;gap:1.5rem;margin-bottom:2rem}.footer-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}.footer-logo img{width:42px;border-radius:6px;background:#000}.footer-logo strong{color:#fff}
-.alert{background:rgba(179,58,46,.2);border:1px solid var(--danger);color:#ff8a80;padding:.9rem 1rem;border-radius:8px;font-size:.85rem;margin-top:1rem}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.25rem;text-align:center;font-size:.8rem;opacity:.7}
-.float-wa{position:fixed;bottom:1.25rem;right:1.25rem;z-index:99;width:56px;height:56px;border-radius:50%;background:var(--wa);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 24px rgba(37,211,102,.45)}
-@media(min-width:640px){.services-grid{grid-template-columns:1fr 1fr}.hours-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:768px){nav{display:flex;gap:.15rem}.hero-grid{grid-template-columns:1.2fr .8fr}.about-grid{grid-template-columns:.9fr 1.1fr}.location-grid{grid-template-columns:1.15fr .85fr}.footer-grid{grid-template-columns:1.5fr 1fr 1fr}.services-grid{grid-template-columns:1fr 1fr 1fr}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- ============================================================
+     MÓDULO: HEADER – EDITAR SOLO TEXTOS DE LOGO / NAV / CTA
+     IDs/clases estables: header, .header-inner, .logo-link, nav, .btn-wa
+     ============================================================ -->
 <header>
-<div class="container header-inner">
-<a class="logo-link" href="#inicio"><img src="assets/logo.png" alt="Logo Dr. Daniel Sosa"><div class="logo-text">Dr. Daniel Sosa<span>Médico Cirujano</span></div></a>
-<nav>
-<a href="#sobre-mi">Sobre mí</a><a href="#servicios">Servicios</a><a href="#ubicacion">Ubicación</a><a href="#horarios">Horarios</a><a href="#cita">Citas</a>
-</nav>
-<a class="btn btn-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener">WhatsApp</a>
-</div>
+  <div class="container header-inner">
+    <a class="logo-link" href="#inicio" aria-label="Ir al inicio — Dr. Daniel Sosa">
+      <img src="assets/logo.png" width="52" height="52" alt="Logo Dr. Daniel Israel Sosa de Santiago">
+      <div class="logo-text">Dr. Daniel Sosa<span>Médico Cirujano</span></div>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#cita">Citas</a>
+    </nav>
+    <a class="btn btn-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">WhatsApp</a>
+  </div>
 </header>
 
-<section id="inicio">
-<div class="container hero-grid">
-<div>
-<span class="badge">Médico Cirujano · Cédula 12296387</span>
-<h1>Atención médica clara,<br><span>sin prisas y con plan</span></h1>
-<p class="hero-sub">Consulta general, curaciones, suturas, certificados y procedimientos ambulatorios en Plaza del Bosque, León, Guanajuato.</p>
-<div class="hero-ctas">
-<a class="btn btn-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener">WhatsApp</a>
-<a class="btn btn-gold" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01XIokL2JCqR9Tcm1MCGEZz2pidBiTgsVSr8Rq3enmHzGva0LFjXROWNyhxLj77wXd6EOQkv14" target="_blank" rel="noopener">¡Agenda tu cita!</a>
-</div>
-<div class="hero-meta">
-<div><strong>Ubicación</strong>Plaza del Bosque · León, Gto.</div>
-<div><strong>Horario regular</strong>Lun–Vie 9–14 y 16–21 h</div>
-<div><strong>Consulta desde</strong>$150 MXN</div>
-</div>
-</div>
-<div class="hero-logo" style="background:transparent;padding:0;overflow:hidden;border-radius:16px"><img src="assets/doctor-photo.jpg" alt="Dr. Daniel Israel Sosa de Santiago" style="width:min(300px,75vw);height:min(300px,75vw);object-fit:cover;object-position:top;border-radius:16px;display:block"></div>
-</div>
+<!-- ============================================================
+     MÓDULO: HERO / INICIO – EDITAR SOLO ESTE TEXTO
+     ID estable: #inicio · CTAs duales obligatorios (WA + Calendar)
+     ============================================================ -->
+<section id="inicio" class="atmosphere-hero" aria-label="Presentación">
+  <div class="container hero-grid">
+    <div>
+      <!-- MÓDULO: HERO BADGE – EDITAR SOLO ESTE TEXTO -->
+      <span class="badge">Médico Cirujano · Cédula 12296387</span>
+      <!-- MÓDULO: HERO TÍTULO – EDITAR SOLO ESTE TEXTO -->
+      <h1>Atención médica clara,<br><span>sin prisas y con plan</span></h1>
+      <!-- MÓDULO: HERO SUBTÍTULO – EDITAR SOLO ESTE TEXTO -->
+      <p class="hero-sub">Consulta general, curaciones, suturas, certificados y procedimientos ambulatorios en Plaza del Bosque, León, Guanajuato.</p>
+      <!-- MÓDULO: HERO CTAS DUALES – mantener ambos botones juntos -->
+      <div class="hero-ctas cta-pair">
+        <a class="btn btn-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp">WhatsApp</a>
+        <a class="btn btn-gold" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01XIokL2JCqR9Tcm1MCGEZz2pidBiTgsVSr8Rq3enmHzGva0LFjXROWNyhxLj77wXd6EOQkv14" target="_blank" rel="noopener noreferrer" aria-label="Agendar cita en Google Calendar">¡Agenda tu cita!</a>
+      </div>
+      <!-- MÓDULO: HERO META – EDITAR SOLO ESTE TEXTO -->
+      <div class="hero-meta">
+        <div><strong>Ubicación</strong>Plaza del Bosque · León, Gto.</div>
+        <div><strong>Horario regular</strong>Lun–Vie 9–14 y 16–21 h</div>
+        <div><strong>Consulta desde</strong>$150 MXN</div>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/doctor-photo.jpg" width="300" height="300" alt="Dr. Daniel Israel Sosa de Santiago, Médico Cirujano en León, Guanajuato">
+    </div>
+  </div>
 </section>
 
-<section id="sobre-mi">
-<div class="container about-grid">
-<div class="about-logo"><img src="assets/logo.png" alt="Dr. Daniel Israel Sosa de Santiago"></div>
-<div>
-<h2 class="section-title" style="text-align:left">Dr. Daniel Israel Sosa de Santiago</h2>
-<p style="color:var(--muted);margin-bottom:1rem">Médico Cirujano con cédula profesional <strong style="color:var(--text)">12296387</strong>. Atiendo a pacientes de todas las edades en un consultorio cómodo y bien equipado dentro de Plaza del Bosque.</p>
-<p style="color:var(--muted)">Mi prioridad es una consulta clara, sin prisas y con un plan de tratamiento comprensible. Ofrezco consulta general, curaciones, suturas, certificados médicos y procedimientos ambulatorios de primer contacto.</p>
-<div class="credentials"><strong style="color:var(--primary-dark)">Experiencia clínica</strong>
-<ul style="margin:0.6rem 0 0 1.1rem;padding:0;color:var(--muted);line-height:1.55">
-<li style="margin-bottom:0.45rem"><strong style="color:var(--text)">Medicina de urgencias</strong> (diagnóstico y tratamiento). Certificación en ACLS (Advanced Cardiac Life Support) por la American Heart Association.</li>
-<li style="margin-bottom:0.45rem"><strong style="color:var(--text)">Cirugía general</strong> (diagnóstico y tratamiento inicial): colecistitis, apendicitis, hernias. Urología (litos urinarios, hiperplasia prostática), angiología (úlceras, várices, insuficiencia venosa o arterial), neurocirugía (columna).</li>
-<li style="margin-bottom:0.45rem"><strong style="color:var(--text)">Medicina interna</strong> (diagnóstico y tratamiento inicial de patologías que no requieren hospitalización): cardiología, neurología, gastroenterología, endocrinología, neumología, nefrología.</li>
-<li style="margin-bottom:0.45rem"><strong style="color:var(--text)">Ginecología</strong> (diagnóstico y orientación terapéutica).</li>
-<li style="margin-bottom:0.45rem"><strong style="color:var(--text)">Pediatría</strong> (diagnóstico y tratamiento inicial) en mayores de 2 años.</li>
-<li style="margin-bottom:0.45rem"><strong style="color:var(--text)">Traumatología</strong> (diagnóstico y tratamientos no quirúrgicos): esguinces y fracturas.</li>
-<li style="margin-bottom:0"><strong style="color:var(--text)">Psiquiatría</strong> (diagnóstico y tratamiento inicial): ansiedad y depresión.</li>
-</ul></div>
-<div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem">
-<a class="btn btn-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener">Mensaje directo</a>
-<a class="btn btn-primary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01XIokL2JCqR9Tcm1MCGEZz2pidBiTgsVSr8Rq3enmHzGva0LFjXROWNyhxLj77wXd6EOQkv14" target="_blank" rel="noopener">¡Agenda tu cita!</a>
-</div>
-</div>
-</div>
+<!-- ============================================================
+     MÓDULO: SOBRE MÍ (#sobre-mi) – EDITAR SOLO ESTE TEXTO
+     Biografía profesional y modesta · Documento Maestro
+     ============================================================ -->
+<section id="sobre-mi" class="atmosphere-light" aria-labelledby="titulo-sobre-mi">
+  <div class="container about-grid">
+    <div class="about-logo">
+      <img src="assets/logo.png" width="260" height="260" alt="Emblema del consultorio del Dr. Daniel Israel Sosa de Santiago">
+    </div>
+    <div>
+      <h2 id="titulo-sobre-mi" class="section-title" style="text-align:left">Dr. Daniel Israel Sosa de Santiago</h2>
+
+      <!-- MÓDULO: BIOGRAFÍA PRINCIPAL – EDITAR SOLO ESTE TEXTO -->
+      <p class="bio-text">
+        Médico Cirujano con cédula profesional <strong>12296387</strong>, obtenida en <strong>2020</strong>.
+        He complementado mi formación con estudios de maestría (en curso / parcial) y con práctica clínica
+        en entornos hospitalarios, donde consolidé criterios de valoración, manejo inicial y seguimiento
+        de pacientes de primer contacto.
+      </p>
+      <p class="bio-text">
+        En <strong>2026</strong> abrí este consultorio en Plaza del Bosque (León, Guanajuato) con un objetivo sencillo:
+        ofrecer atención clara, sin prisas y con un plan de tratamiento comprensible. Atiendo a pacientes
+        de distintas edades en un espacio cómodo y bien equipado, orientado a consulta general, curaciones,
+        suturas, certificados y procedimientos ambulatorios de primer contacto.
+      </p>
+      <p class="bio-text">
+        Mi trabajo se centra en escuchar, explicar y acompañar: no pretendo sustituir la atención de
+        especialidades de alta complejidad ni la urgencia hospitalaria, sino ser un punto de acceso
+        confiable, cercano y profesional en la comunidad.
+      </p>
+
+      <!-- MÓDULO: EXPERIENCIA CLÍNICA – EDITAR SOLO ESTE TEXTO -->
+      <div class="credentials">
+        <strong class="cred-title">Experiencia clínica</strong>
+        <ul>
+          <li><strong>Medicina de urgencias</strong> (diagnóstico y tratamiento). Certificación en ACLS (Advanced Cardiac Life Support) por la American Heart Association.</li>
+          <li><strong>Cirugía general</strong> (diagnóstico y tratamiento inicial): colecistitis, apendicitis, hernias. Urología (litos urinarios, hiperplasia prostática), angiología (úlceras, várices, insuficiencia venosa o arterial), neurocirugía (columna).</li>
+          <li><strong>Medicina interna</strong> (diagnóstico y tratamiento inicial de patologías que no requieren hospitalización): cardiología, neurología, gastroenterología, endocrinología, neumología, nefrología.</li>
+          <li><strong>Ginecología</strong> (diagnóstico y orientación terapéutica).</li>
+          <li><strong>Pediatría</strong> (diagnóstico y tratamiento inicial) en mayores de 2 años.</li>
+          <li><strong>Traumatología</strong> (diagnóstico y tratamientos no quirúrgicos): esguinces y fracturas.</li>
+          <li><strong>Psiquiatría</strong> (diagnóstico y tratamiento inicial): ansiedad y depresión.</li>
+        </ul>
+      </div>
+
+      <!-- MÓDULO: CTAS DUALES SOBRE MÍ – mantener ambos juntos -->
+      <div class="cta-pair" style="margin-top:1.25rem">
+        <a class="btn btn-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener noreferrer" aria-label="Mensaje directo por WhatsApp">Mensaje directo</a>
+        <a class="btn btn-primary" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01XIokL2JCqR9Tcm1MCGEZz2pidBiTgsVSr8Rq3enmHzGva0LFjXROWNyhxLj77wXd6EOQkv14" target="_blank" rel="noopener noreferrer" aria-label="Agendar cita en Google Calendar">¡Agenda tu cita!</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="servicios" style="background:var(--bg)">
-<div class="container">
-<h2 class="section-title">Servicios médicos</h2>
-<p class="section-sub">Atención integral de primer contacto con enfoque claro y profesional.</p>
-<div class="services-grid">
-<div class="card service"><h3>Consulta general</h3><p>Valoración médica integral, diagnóstico clínico, imagen diagnóstica, análisis de laboratorio y plan de tratamiento personalizado.</p></div>
-<div class="card service"><h3>Aplicación de inyección</h3><p>Intramuscular, intravenosa, subcutánea e intraarticular.</p></div>
-<div class="card service"><h3>Certificados</h3><p>Prenupcial, para trámite de licencia, escolar y laboral.</p></div>
-<div class="card service"><h3>Expediente clínico</h3><p>Historia clínica, notas de evolución, interconsulta, referencia, justificante, receta digital, segunda opinión y resumen en inglés.</p></div>
-<div class="card service"><h3>Curaciones</h3><p>Menor: quemadura 1.er grado, abrasiones, heridas sin sutura. Mayor: control de sangrado, heridas postquirúrgicas, úlceras no infectadas.</p></div>
-<div class="card service"><h3>Suturas y procedimientos</h3><p>Sutura simple y compleja, profundas absorbibles, canal auditivo, verrugas, lipomas, sondas, pie diabético, hidratación IV y atención a domicilio selecta.</p></div>
-</div>
-</div>
+<!-- ============================================================
+     MÓDULO: SERVICIOS (#servicios) – EDITAR SOLO ESTE TEXTO
+     Seis tarjetas · subdivisiones Documento Maestro / Paso 1
+     ============================================================ -->
+<section id="servicios" class="atmosphere-soft" aria-labelledby="titulo-servicios">
+  <div class="container">
+    <h2 id="titulo-servicios" class="section-title">Servicios médicos</h2>
+    <p class="section-sub">Atención integral de primer contacto con enfoque claro y profesional.</p>
+
+    <!-- Preparación visual: siluetas anatómicas (PNG transparente; opcional)
+         Descomentar e insertar rutas cuando existan archivos en assets/silhouettes/ -->
+    <div class="silhouette-wrap" aria-hidden="true">
+      <!-- <img class="silhouette silhouette--full" src="assets/silhouettes/full-body.png" alt=""> -->
+      <!-- <img class="silhouette silhouette--chest" src="assets/silhouettes/chest.png" alt=""> -->
+      <!-- <img class="silhouette silhouette--abdomen" src="assets/silhouettes/abdomen.png" alt=""> -->
+    </div>
+
+    <div class="services-grid">
+
+      <!-- MÓDULO: SERVICIO 1 – CONSULTA GENERAL -->
+      <article class="card service">
+        <h3>Consulta general</h3>
+        <p class="service-lead">Valoración médica integral de primer contacto.</p>
+        <ul class="service-list">
+          <li>Historia clínica y exploración física</li>
+          <li>Diagnóstico clínico orientado</li>
+          <li>Solicitud e interpretación de imagen diagnóstica</li>
+          <li>Solicitud e interpretación de análisis de laboratorio</li>
+          <li>Plan de tratamiento personalizado</li>
+          <li>Seguimiento y ajuste terapéutico</li>
+          <li>Orientación preventiva y educación en salud</li>
+        </ul>
+      </article>
+
+      <!-- MÓDULO: SERVICIO 2 – APLICACIÓN DE INYECCIÓN -->
+      <article class="card service">
+        <h3>Aplicación de inyección</h3>
+        <p class="service-lead">Administración segura según indicación médica.</p>
+        <ul class="service-list">
+          <li>Intramuscular (IM)</li>
+          <li>Intravenosa (IV)</li>
+          <li>Subcutánea (SC)</li>
+          <li>Intraarticular (cuando aplique y esté indicada)</li>
+        </ul>
+        <p class="service-sub"><strong>Nota:</strong> se requiere receta o indicación vigente cuando corresponda.</p>
+      </article>
+
+      <!-- MÓDULO: SERVICIO 3 – CERTIFICADOS -->
+      <article class="card service">
+        <h3>Certificados</h3>
+        <p class="service-lead">Documentos médicos con base en valoración clínica.</p>
+        <ul class="service-list">
+          <li>Prenupcial</li>
+          <li>Para trámite de licencia de conducir</li>
+          <li>Escolar</li>
+          <li>Laboral / aptitud para el trabajo</li>
+          <li>Justificante de atención médica</li>
+        </ul>
+      </article>
+
+      <!-- MÓDULO: SERVICIO 4 – EXPEDIENTE CLÍNICO -->
+      <article class="card service">
+        <h3>Expediente clínico</h3>
+        <p class="service-lead">Documentación ordenada para continuidad de la atención.</p>
+        <ul class="service-list">
+          <li>Historia clínica</li>
+          <li>Notas de evolución</li>
+          <li>Interconsulta</li>
+          <li>Referencia a segundo o tercer nivel</li>
+          <li>Justificante médico</li>
+          <li>Receta digital</li>
+          <li>Segunda opinión</li>
+          <li>Resumen clínico en inglés (cuando se solicite)</li>
+        </ul>
+      </article>
+
+      <!-- MÓDULO: SERVICIO 5 – CURACIONES -->
+      <article class="card service">
+        <h3>Curaciones</h3>
+        <p class="service-lead">Manejo de heridas y lesiones según complejidad.</p>
+        <p class="service-sub"><strong>Curación menor:</strong></p>
+        <ul class="service-list">
+          <li>Quemadura de 1.er grado</li>
+          <li>Abrasiones y erosiones</li>
+          <li>Heridas que no requieren sutura</li>
+          <li>Cambio de apósito simple</li>
+        </ul>
+        <p class="service-sub"><strong>Curación mayor:</strong></p>
+        <ul class="service-list">
+          <li>Control de sangrado local</li>
+          <li>Heridas postquirúrgicas</li>
+          <li>Úlceras no infectadas</li>
+          <li>Heridas con mayor extensión o profundidad (según valoración)</li>
+        </ul>
+      </article>
+
+      <!-- MÓDULO: SERVICIO 6 – SUTURAS Y PROCEDIMIENTOS -->
+      <article class="card service">
+        <h3>Suturas y procedimientos</h3>
+        <p class="service-lead">Procedimientos ambulatorios de primer contacto.</p>
+        <ul class="service-list">
+          <li>Sutura simple</li>
+          <li>Sutura compleja</li>
+          <li>Suturas profundas absorbibles</li>
+          <li>Extracción de cuerpo extraño en canal auditivo (según caso)</li>
+          <li>Manejo de verrugas (según indicación)</li>
+          <li>Lipomas (valoración y manejo ambulatorio cuando aplique)</li>
+          <li>Colocación / manejo de sondas (según indicación)</li>
+          <li>Valoración y curación de pie diabético (ambulatorio)</li>
+          <li>Hidratación intravenosa</li>
+          <li>Atención a domicilio selecta (previa coordinación)</li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- MÓDULO: GIFS OPCIONALES (3–5) – slots listos; ocultos por defecto
+         Para activar: quitar clase gif-slot--hidden y poner src real en assets/gifs/ -->
+    <div class="gif-pack" aria-hidden="true">
+      <div class="gif-slot gif-slot--empty gif-slot--hidden" data-gif="1">GIF 1</div>
+      <div class="gif-slot gif-slot--empty gif-slot--hidden" data-gif="2">GIF 2</div>
+      <div class="gif-slot gif-slot--empty gif-slot--hidden" data-gif="3">GIF 3</div>
+      <div class="gif-slot gif-slot--empty gif-slot--hidden" data-gif="4">GIF 4</div>
+      <div class="gif-slot gif-slot--empty gif-slot--hidden" data-gif="5">GIF 5</div>
+    </div>
+  </div>
 </section>
 
-<section id="ubicacion">
-<div class="container">
-<h2 class="section-title">Ubicación</h2>
-<p class="section-sub">José María Cruz 633, Local #101, Real del Bosque, CP 37178, León de los Aldama, Guanajuato.</p>
-<div class="location-grid">
-<div class="map"><iframe title="Mapa" src="https://maps.google.com/maps?q=Jos%C3%A9%20Mar%C3%ADa%20Cruz%20633%2C%20Real%20del%20Bosque%2C%20Le%C3%B3n%2C%20Guanajuato&t=&z=16&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe></div>
-<div>
-<p style="color:var(--muted);margin-bottom:1rem">Consultorio dentro de Plaza del Bosque. Acceso fácil y ambiente profesional.</p>
-<a class="btn btn-outline" href="https://maps.app.goo.gl/kkC9djB9A528P9Ty7?g_st=ac" target="_blank" rel="noopener">Abrir en Google Maps</a>
-<h3 style="margin-top:1.25rem;color:var(--primary-dark);font-size:1rem">Amenidades</h3>
-<div class="amenidades">
-<div class="amenidad">Estacionamiento en la plaza</div>
-<div class="amenidad">Rampa de acceso</div>
-<div class="amenidad">Baños hombres y mujeres</div>
-<div class="amenidad">Timbre con videollamada</div>
-<div class="amenidad">Internet para pacientes</div>
-</div>
-</div>
-</div>
-</div>
+<!-- ============================================================
+     MÓDULO: UBICACIÓN (#ubicacion) – EDITAR SOLO ESTE TEXTO
+     Mapa embed gratuito Google Maps · amenidades
+     ============================================================ -->
+<section id="ubicacion" class="atmosphere-light" aria-labelledby="titulo-ubicacion">
+  <div class="container">
+    <h2 id="titulo-ubicacion" class="section-title">Ubicación</h2>
+    <!-- MÓDULO: DIRECCIÓN – EDITAR SOLO ESTE TEXTO -->
+    <p class="section-sub">José María Cruz 633, Local #101, Real del Bosque, CP 37178, León de los Aldama, Guanajuato.</p>
+    <div class="location-grid">
+      <div class="map">
+        <iframe
+          title="Mapa del consultorio en Plaza del Bosque, León, Guanajuato"
+          src="https://maps.google.com/maps?q=Jos%C3%A9%20Mar%C3%ADa%20Cruz%20633%2C%20Real%20del%20Bosque%2C%20Le%C3%B3n%2C%20Guanajuato&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+      <div>
+        <p class="text-muted" style="margin-bottom:1rem">Consultorio dentro de Plaza del Bosque. Acceso fácil y ambiente profesional.</p>
+        <a class="btn btn-outline" href="https://maps.app.goo.gl/kkC9djB9A528P9Ty7?g_st=ac" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación en Google Maps">Abrir en Google Maps</a>
+        <!-- MÓDULO: AMENIDADES – EDITAR SOLO ESTE TEXTO -->
+        <h3 style="margin-top:1.25rem;color:var(--primary-dark);font-size:1rem">Amenidades</h3>
+        <div class="amenidades">
+          <div class="amenidad">Estacionamiento en la plaza</div>
+          <div class="amenidad">Rampa de acceso</div>
+          <div class="amenidad">Baños hombres y mujeres</div>
+          <div class="amenidad">Timbre con videollamada</div>
+          <div class="amenidad">Internet para pacientes</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="horarios">
-<div class="container">
-<h2 class="section-title">Horarios y precios</h2>
-<p class="section-sub">Solo con cita. Consulta de urgencias disponible en horarios nocturnos.</p>
-<div class="hours-grid">
-<div class="card">
-<h3 style="color:var(--primary);margin-bottom:1rem">Consulta regular</h3>
-<table>
-<tr><td>Lunes a viernes</td><td>9:00 – 14:00 h</td></tr>
-<tr><td></td><td>16:00 – 21:00 h</td></tr>
-<tr><td>Sábados</td><td>10:00 – 15:00 h</td></tr>
-</table>
-<div class="note"><strong>Precio regular:</strong> $150 MXN (lun–vie horario normal)</div>
-</div>
-<div class="card">
-<h3 style="color:var(--danger);margin-bottom:1rem">Consulta de urgencias</h3>
-<table>
-<tr><td>Lun–Vie 21:00 – 00:00 h</td><td>$300</td></tr>
-<tr><td>00:00 – 08:00 h</td><td>$500</td></tr>
-<tr><td>Sábados fuera de horario</td><td>$500</td></tr>
-<tr><td>Domingos</td><td>$500</td></tr>
-</table>
-<div class="note note-danger"><strong>Importante:</strong> en emergencia vital acuda al hospital más cercano.</div>
-</div>
-</div>
-<div class="card" style="margin-top:1.25rem">
-<strong style="color:var(--primary-dark)">Formas de pago y facturación</strong>
-<p style="margin-top:.4rem;color:var(--muted);font-size:.95rem">Efectivo y transferencia. Se emite factura fiscal cuando se solicita.</p>
-</div>
-</div>
+<!-- ============================================================
+     MÓDULO: HORARIOS Y PRECIOS (#horarios) – EDITAR SOLO ESTE TEXTO
+     Incluye Scotiabank + nota de facturación
+     ============================================================ -->
+<section id="horarios" class="atmosphere-soft" aria-labelledby="titulo-horarios">
+  <div class="container">
+    <h2 id="titulo-horarios" class="section-title">Horarios y precios</h2>
+    <p class="section-sub">Solo con cita. Consulta de urgencias disponible en horarios nocturnos.</p>
+
+    <div class="hours-grid">
+      <!-- MÓDULO: TABLA CONSULTA REGULAR -->
+      <div class="card">
+        <h3 style="color:var(--primary);margin-bottom:1rem">Consulta regular</h3>
+        <table class="table-stack" aria-label="Horario de consulta regular">
+          <tbody>
+            <tr><td>Lunes a viernes</td><td>9:00 – 14:00 h</td></tr>
+            <tr><td>Lunes a viernes</td><td>16:00 – 21:00 h</td></tr>
+            <tr><td>Sábados</td><td>10:00 – 15:00 h</td></tr>
+          </tbody>
+        </table>
+        <div class="note"><strong>Precio regular:</strong> $150 MXN (lun–vie horario normal)</div>
+      </div>
+
+      <!-- MÓDULO: TABLA URGENCIAS -->
+      <div class="card">
+        <h3 style="color:var(--danger);margin-bottom:1rem">Consulta de urgencias</h3>
+        <table class="table-stack" aria-label="Precios de consulta de urgencias">
+          <tbody>
+            <tr><td>Lun–Vie 21:00 – 00:00 h</td><td>$300</td></tr>
+            <tr><td>00:00 – 08:00 h</td><td>$500</td></tr>
+            <tr><td>Sábados fuera de horario</td><td>$500</td></tr>
+            <tr><td>Domingos</td><td>$500</td></tr>
+          </tbody>
+        </table>
+        <div class="note note-danger"><strong>Importante:</strong> en emergencia vital acuda al hospital más cercano. Ver lista completa en el pie de página.</div>
+      </div>
+    </div>
+
+    <!-- MÓDULO: PAGO SCOTIABANK + FACTURACIÓN – EDITAR SOLO ESTE TEXTO -->
+    <div class="card payment-block">
+      <h3>Formas de pago y transferencia</h3>
+      <p class="text-muted" style="margin-bottom:0.5rem;font-size:0.95rem">
+        Se acepta <strong style="color:var(--text)">efectivo</strong> y <strong style="color:var(--text)">transferencia bancaria</strong>.
+      </p>
+      <dl class="bank-details">
+        <dt>Banco</dt>
+        <dd>Scotiabank</dd>
+        <dt>Titular</dt>
+        <dd>Daniel Israel Sosa De Santiago</dd>
+        <dt>Concepto de pago</dt>
+        <dd>consulta médica</dd>
+      </dl>
+      <p class="text-muted" style="font-size:0.9rem">
+        Al transferir, use exactamente el concepto <strong style="color:var(--text)">«consulta médica»</strong>
+        e informe su comprobante por WhatsApp para confirmar la cita.
+      </p>
+      <!-- CLABE / cuenta: agregar aquí solo si el doctor autoriza publicarla
+           <p class="bank-details"><strong>CLABE:</strong> XXXX…</p> -->
+      <p class="factura-note">
+        <strong>Facturación:</strong> se emite factura fiscal (CFDI) cuando se solicita.
+        Indique RFC, razón social y uso de CFDI al momento de la consulta o por WhatsApp.
+        El tiempo de emisión puede variar según la carga administrativa del día.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section id="cita">
-<div class="container">
-<h2 class="section-title">Agenda tu cita</h2>
-<p class="section-sub">Elige la forma que más te convenga. Confirmación rápida por WhatsApp.</p>
-<div class="reserva-ctas">
-<a class="btn btn-wa" style="padding:.85rem 1.5rem;font-size:1rem" href="https://wa.me/5214771235388?text=Hola%20Doctor%2C%20deseo%20agendar%20una%20cita" target="_blank" rel="noopener">WhatsApp · 477 123 5388</a>
-<a class="btn btn-gold" style="padding:.85rem 1.5rem;font-size:1rem" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01XIokL2JCqR9Tcm1MCGEZz2pidBiTgsVSr8Rq3enmHzGva0LFjXROWNyhxLj77wXd6EOQkv14" target="_blank" rel="noopener">¡Agenda tu cita! (Google Calendar)</a>
-</div>
-</div>
+<!-- ============================================================
+     MÓDULO: CITA / RESERVA (#cita) – CTAs duales siempre juntos
+     ============================================================ -->
+<section id="cita" class="atmosphere-accent" aria-labelledby="titulo-cita">
+  <div class="container">
+    <h2 id="titulo-cita" class="section-title">Agenda tu cita</h2>
+    <p class="section-sub">Elige la forma que más te convenga. Confirmación rápida por WhatsApp.</p>
+    <div class="reserva-ctas cta-pair">
+      <a class="btn btn-wa" style="padding:.85rem 1.5rem;font-size:1rem" href="https://wa.me/5214771235388?text=Hola%20Doctor%2C%20deseo%20agendar%20una%20cita" target="_blank" rel="noopener noreferrer" aria-label="Agendar por WhatsApp al 477 123 5388">WhatsApp · 477 123 5388</a>
+      <a class="btn btn-gold" style="padding:.85rem 1.5rem;font-size:1rem" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ01XIokL2JCqR9Tcm1MCGEZz2pidBiTgsVSr8Rq3enmHzGva0LFjXROWNyhxLj77wXd6EOQkv14" target="_blank" rel="noopener noreferrer" aria-label="Agendar en Google Calendar">¡Agenda tu cita! (Google Calendar)</a>
+    </div>
+  </div>
 </section>
 
-<section id="contacto">
-<div class="container" style="max-width:700px">
-<h2 class="section-title">Contacto y redes</h2>
-<p class="section-sub">Disponible para dudas y agenda directa.</p>
-<div class="contact-item"><div class="contact-icon">WA</div><div><strong>WhatsApp</strong><br><a href="https://wa.me/5214771235388" target="_blank" rel="noopener" style="color:var(--primary);font-weight:500">477 123 5388</a><div style="font-size:.8rem;color:var(--muted)">Solo mensajes y llamadas por WhatsApp</div></div></div>
-<div class="contact-item"><div class="contact-icon">📍</div><div><strong>Dirección</strong><br><span style="color:var(--muted);font-size:.95rem">José María Cruz 633, Local #101<br>Real del Bosque, CP 37178 · León, Gto.</span></div></div>
-<div class="socials">
-<a class="social ig" href="https://www.instagram.com/leinadrd?igsh=MTVmMGppZHMzMnR4dA==" target="_blank" rel="noopener">IG</a>
-<a class="social fb" href="https://www.facebook.com/share/1S5U22dAP9/" target="_blank" rel="noopener">FB</a>
-</div>
-</div>
+<!-- ============================================================
+     MÓDULO: CONTACTO Y REDES (#contacto) – EDITAR SOLO ESTE TEXTO
+     ============================================================ -->
+<section id="contacto" class="atmosphere-light" aria-labelledby="titulo-contacto">
+  <div class="container" style="max-width:700px">
+    <h2 id="titulo-contacto" class="section-title">Contacto y redes</h2>
+    <p class="section-sub">Disponible para dudas y agenda directa.</p>
+
+    <div class="contact-item">
+      <div class="contact-icon" aria-hidden="true">WA</div>
+      <div>
+        <strong>WhatsApp</strong><br>
+        <a href="https://wa.me/5214771235388" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:500" aria-label="Llamar o escribir al WhatsApp 477 123 5388">477 123 5388</a>
+        <div style="font-size:.8rem;color:var(--muted)">Solo mensajes y llamadas por WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <div class="contact-icon" aria-hidden="true">📍</div>
+      <div>
+        <strong>Dirección</strong><br>
+        <span class="text-muted" style="font-size:.95rem">José María Cruz 633, Local #101<br>Real del Bosque, CP 37178 · León, Gto.</span>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a class="social ig" href="https://www.instagram.com/leinadrd?igsh=MTVmMGppZHMzMnR4dA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram del Dr. Daniel Sosa">IG</a>
+      <a class="social fb" href="https://www.facebook.com/share/1S5U22dAP9/" target="_blank" rel="noopener noreferrer" aria-label="Facebook del Dr. Daniel Sosa">FB</a>
+    </div>
+  </div>
 </section>
 
+<!-- ============================================================
+     MÓDULO: FOOTER – URGENCIAS COMPLETAS + REGLA 15 MIN + COFEPRIS
+     Alto contraste · EDITAR SOLO ESTE TEXTO
+     ============================================================ -->
 <footer>
-<div class="container">
-<div class="footer-grid">
-<div>
-<div class="footer-logo"><img src="assets/logo.png" alt="Logo"><strong>Dr. Daniel Israel Sosa de Santiago</strong></div>
-<p>Médico Cirujano · Cédula profesional 12296387</p>
-<p style="margin-top:.4rem">Plaza del Bosque · León, Guanajuato</p>
-<div class="alert">En caso de emergencia vital acuda de inmediato al hospital más cercano. Este consultorio no sustituye la atención hospitalaria de emergencia.</div>
-</div>
-<div><strong style="color:#fff;display:block;margin-bottom:.5rem">Enlaces</strong>
-<a href="#servicios" style="display:block;margin-bottom:.3rem">Servicios</a>
-<a href="#horarios" style="display:block;margin-bottom:.3rem">Horarios y precios</a>
-<a href="#cita" style="display:block;margin-bottom:.3rem">Agendar cita</a>
-<a href="#ubicacion" style="display:block">Ubicación</a>
-</div>
-<div><strong style="color:#fff;display:block;margin-bottom:.5rem">Aviso sanitario</strong>
-<p style="font-size:.85rem">Aviso de funcionamiento y responsable sanitario del establecimiento de servicios de salud conforme a COFEPRIS (FF-COFEPRIS-02).</p>
-</div>
-</div>
-<div class="footer-bottom">© 2026 Dr. Daniel Israel Sosa de Santiago · Todos los derechos reservados</div>
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo.png" width="42" height="42" alt="Logo Dr. Daniel Sosa">
+          <strong>Dr. Daniel Israel Sosa de Santiago</strong>
+        </div>
+        <p>Médico Cirujano · Cédula profesional 12296387</p>
+        <p style="margin-top:.4rem">Plaza del Bosque · León, Guanajuato</p>
+
+        <!-- MÓDULO: LISTA DE URGENCIAS + REGLA DE 15 MINUTOS – EDITAR SOLO ESTE TEXTO -->
+        <div class="alert alert-emergency" role="note" aria-label="Aviso de emergencias">
+          <p class="alert-title">⚠ En caso de emergencia vital, acuda de inmediato al hospital más cercano o marque 911.</p>
+          <p>Este consultorio <strong>no sustituye</strong> la atención hospitalaria de emergencia. Situaciones que requieren atención hospitalaria inmediata (entre otras):</p>
+          <ul>
+            <li>Dolor de pecho intenso, opresivo o que se irradia a brazo, cuello o mandíbula</li>
+            <li>Dificultad grave para respirar o sensación de ahogo</li>
+            <li>Pérdida de la conciencia, desmayo o confusión súbita</li>
+            <li>Debilidad o entumecimiento súbito de cara, brazo o pierna; dificultad para hablar (posible EVC)</li>
+            <li>Convulsiones</li>
+            <li>Sangrado abundante que no se detiene con presión directa</li>
+            <li>Traumatismo grave (accidente de tránsito, caída de altura, golpe fuerte en cabeza)</li>
+            <li>Reacción alérgica severa (hinchazón de cara, labios o garganta; sibilancias)</li>
+            <li>Quemaduras extensas o profundas</li>
+            <li>Intoxicación, sobredosis o ingestión de sustancias tóxicas</li>
+            <li>Dolor abdominal intenso y súbito con vómito persistente o abdomen rígido</li>
+            <li>Hemorragia vaginal abundante o dolor pélvico severo en embarazo</li>
+          </ul>
+          <div class="rule-15">
+            Regla de los 15 minutos: si no puede contactar al médico o llegar al consultorio en menos de 15 minutos ante una situación de gravedad, no espere: acuda al hospital más cercano o solicite auxilio al 911.
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <strong style="color:#fff;display:block;margin-bottom:.5rem">Enlaces</strong>
+        <a href="#servicios">Servicios</a>
+        <a href="#horarios">Horarios y precios</a>
+        <a href="#cita">Agendar cita</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#sobre-mi">Sobre mí</a>
+      </div>
+
+      <div>
+        <!-- MÓDULO: AVISO COFEPRIS – EDITAR SOLO ESTE TEXTO -->
+        <strong style="color:#fff;display:block;margin-bottom:.5rem">Aviso sanitario</strong>
+        <div class="cofepris-notice">
+          <strong>COFEPRIS</strong>
+          Establecimiento de atención médica ambulatoria. Aviso de funcionamiento y responsable sanitario del establecimiento de servicios de salud conforme a la normativa aplicable de la Comisión Federal para la Protección contra Riesgos Sanitarios (COFEPRIS), incluyendo el formato de aviso de funcionamiento (FF-COFEPRIS-02) y disposiciones vigentes en materia de establecimientos de atención médica.
+          <br><br>
+          La información de este sitio es de carácter informativo y no sustituye la valoración médica presencial ni la atención de urgencias hospitalarias.
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Dr. Daniel Israel Sosa de Santiago · Todos los derechos reservados · Sitio de difusión informativa</div>
+  </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a>
+<!-- Botón flotante WhatsApp -->
+<a class="float-wa" href="https://wa.me/5214771235388" target="_blank" rel="noopener noreferrer" aria-label="Abrir chat de WhatsApp con el Dr. Daniel Sosa">WA</a>
+
 </body>
 </html>
