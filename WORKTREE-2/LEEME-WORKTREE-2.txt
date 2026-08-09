@@ -1,23 +1,25 @@
-WORKTREE 2 — Consultorio Dr. Daniel Israel Sosa de Santiago
-============================================================
-Fecha de empaquetado: 9 de agosto de 2026
+WORKTREE 2 — ENTREGADO
+=======================
+Consultorio Dr. Daniel Israel Sosa de Santiago
+Fecha: 9 de agosto de 2026
 
-CONTENIDO DE ESTA CARPETA (listo para usar / subir a GitHub Pages):
+YA ESTÁ EN TU REPOSITORIO.
 
-  index.html          → Página completa del sitio
-  styles.css          → Estilos mobile-first
-  README.md           → Resumen del repositorio
-  assets/
-    logo.png / logo.svg / doctor-photo.jpg
-    og-preview.jpg    → Vista previa WhatsApp
-    og-share.jpg / qr-consultorio.png
-  docs/
-    GUIA-MAESTRA-EDICION.md
-    AUDITORIA-FASE1.md
+OPCIÓN 1 — Descargar TODO el sitio (recomendado):
+https://github.com/drdanielisraelsosa-byte/consultorio-dr-daniel-sosa/archive/refs/heads/main.zip
 
-ENLACE PÚBLICO YA PUBLICADO:
+OPCIÓN 2 — Ver carpeta WORKTREE-2 en GitHub:
+https://github.com/drdanielisraelsosa-byte/consultorio-dr-daniel-sosa/tree/main/WORKTREE-2
+
+OPCIÓN 3 — Sitio público (pacientes):
 https://drdanielisraelsosa-byte.github.io/consultorio-dr-daniel-sosa/
 
-NOTA:
-Los assets binarios (PNG/JPG) son los mismos que en /assets de la raíz del repo.
-Copia de /assets a WORKTREE-2/assets si necesitas la carpeta autocontenida.
+ARCHIVOS DEL SITIO (raíz del repo = worktree operativo):
+  index.html
+  styles.css
+  assets/logo.png, doctor-photo.jpg, og-preview.jpg, qr-consultorio.png, ...
+  GUIA-MAESTRA-EDICION.md
+  AUDITORIA-FASE1.md
+  WORKTREE-2/ (esta carpeta de entrega)
+
+No requiere SuperGrok para seguir usando ni editando el sitio.
