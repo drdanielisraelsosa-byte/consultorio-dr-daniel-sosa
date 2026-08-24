@@ -28,7 +28,7 @@ export const SITE = {
     shortName: "Dr. Daniel Sosa",
     title: "Médico Cirujano",
     license: "12296387",
-    portrait: "/doctor-hero-night.jpg",
+    portrait: "/doctor-full-body.jpg",
     logo: "/logo-luxury.png",
   },
   links: {

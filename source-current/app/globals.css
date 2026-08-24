@@ -82,7 +82,7 @@ img { display: block; }
 
 .physician-portrait { position: absolute; z-index: 2; top: 0; right: 0; bottom: 0; width: 38%; overflow: hidden; border-left: 1px solid var(--line); background: #0d1411; }
 .physician-portrait:before { position: absolute; z-index: 3; inset: 0; content: ''; box-shadow: inset 30px 0 60px rgba(0, 0, 0, .42); pointer-events: none; }
-.physician-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 28%; filter: saturate(.78) contrast(1.02) brightness(.82); transition: filter .5s ease, transform .8s ease; }
+.physician-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; filter: saturate(.78) contrast(1.02) brightness(.82); transition: filter .5s ease, transform .8s ease; }
 .site-shell.page-inicio .physician-portrait img, .site-shell.page-perfil .physician-portrait img { filter: saturate(.86) contrast(1.03) brightness(.9); transform: scale(1.015); }
 .portrait-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5, 8, 7, .78), transparent 22%), linear-gradient(0deg, rgba(5, 8, 7, .88), transparent 35%); }
 .portrait-signature { position: absolute; z-index: 4; right: 30px; bottom: 92px; display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
@@ -103,6 +103,16 @@ img { display: block; }
 .hero-copy h1 em { color: var(--brass-soft); font-weight: 500; }
 .hero-lead { max-width: 650px; margin-bottom: 24px; color: #bdc7c2; font-size: clamp(14px, 1.2vw, 17px); line-height: 1.65; }
 .hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero-actions .external-action:first-child {
+  min-width: 300px;
+  min-height: 78px;
+  gap: 15px;
+  padding: 0 30px;
+  border-radius: 5px;
+  font-size: 13px;
+  letter-spacing: .075em;
+  box-shadow: 0 20px 48px rgba(183, 143, 73, .3);
+}
 .trust-row { display: grid; max-width: 680px; grid-template-columns: repeat(3, 1fr); margin-top: clamp(26px, 4vh, 44px); border-top: 1px solid var(--line); }
 .trust-row span { display: flex; min-height: 69px; flex-direction: column; justify-content: center; padding: 13px 20px; color: #85948d; border-right: 1px solid var(--line); font-size: 8px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .trust-row span:first-child { padding-left: 0; }
@@ -320,7 +330,7 @@ img { display: block; }
   .physician-portrait { z-index: 10; top: 0; right: 0; bottom: auto; left: 0; width: 100%; height: 28svh; border-bottom: 1px solid var(--line); border-left: 0; opacity: 1; }
   .physician-portrait:before { box-shadow: inset 0 -24px 42px rgba(0, 0, 0, .34); }
   .physician-portrait:after { position: absolute; z-index: 3; inset: 0; content: ''; background: linear-gradient(0deg, rgba(5, 8, 7, .48), transparent 40%); pointer-events: none; }
-  .physician-portrait img { object-position: 56% 27%; filter: saturate(.82) contrast(1.02) brightness(.86); }
+  .physician-portrait img { object-fit: contain; object-position: 50% 50%; filter: saturate(.82) contrast(1.02) brightness(.86); }
   .portrait-shade { background: linear-gradient(0deg, rgba(5, 8, 7, .42), transparent 38%); }
   .portrait-signature { display: none; }
   .screen { z-index: 5; }
@@ -334,6 +344,7 @@ img { display: block; }
   .hero-lead { max-width: 82%; font-size: 13px; }
   .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
   .hero-actions .external-action { min-height: 48px; padding: 0 10px; font-size: 8px; }
+  .hero-actions .external-action:first-child { grid-column: 1 / -1; width: 100%; min-width: 0; min-height: 72px; padding: 0 22px; font-size: 12px; }
   .hero-actions .external-action > svg:last-child { display: none; }
   .trust-row { max-width: 100%; margin-top: 24px; }
   .trust-row span { min-height: 58px; padding: 10px 9px; font-size: 6px; }
