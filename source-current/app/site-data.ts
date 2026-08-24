@@ -169,11 +169,6 @@ export const CAREER_CITIES: CareerCity[] = [
         image: "https://www.cmqhospital.com/images/logotipo%20oficial.png?crc=127525747",
         url: "https://www.cmqhospital.com/",
       },
-      {
-        name: "Hospital Comunitario de Las Joyas",
-        image: "https://pbs.twimg.com/media/DmcqqEkUYAAbF2Z.jpg",
-        url: "https://www.google.com/maps/search/?api=1&query=Hospital+Comunitario+Las+Joyas+León+Guanajuato",
-      },
     ],
   },
   {
@@ -181,7 +176,7 @@ export const CAREER_CITIES: CareerCity[] = [
     city: "Guadalajara",
     region: "Jalisco",
     kind: "Hospitalaria",
-    note: "Rotaciones en instituciones públicas y privadas de alta especialidad.",
+    note: "Experiencia clínica en instituciones públicas y privadas de alta especialidad.",
     hospitals: [
       {
         name: "Hospital Puerta de Hierro Andares",
@@ -189,8 +184,8 @@ export const CAREER_CITIES: CareerCity[] = [
         url: "https://hospitalespuertadehierro.com/",
       },
       {
-        name: "Hospital San Javier",
-        image: "https://sixt.vn/wp-content/uploads/san-javier-hospital-in-guadalajara-has-a-gastro-an.jpg",
+        name: "Hospital San Javier Guadalajara",
+        image: "https://static.wixstatic.com/media/e12576_bc5180ac59374f779bf290916258b4a1~mv2.jpg/v1/fill/w_1600,h_1067,al_c,q_88/e12576_bc5180ac59374f779bf290916258b4a1~mv2.jpg",
         url: "https://sanjavier.com.mx/",
       },
       {
