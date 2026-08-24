@@ -18,7 +18,7 @@ const PAGE_LABEL: Record<PageId, string> = {
   contacto: "Contacto y urgencias",
   costos: "Servicios y costos",
   perfil: "El médico",
-  trayectoria: "Trayectoria",
+  trayectoria: "Experiencia",
 };
 
 const PAGE_GRAPH: Record<PageId, { left?: PageId; right?: PageId }> = {
@@ -155,13 +155,13 @@ export default function Home() {
       </Screen>
 
       <Screen id="perfil" page={page} className="screen-profile">
-        <div className="profile-layout"><div><p className="eyebrow"><span /> Identidad profesional</p><h2>{SITE.doctor.name}</h2><p className="profile-lead">Médico Cirujano con una práctica construida alrededor de la escucha, la explicación clara y el criterio clínico.</p><div className="credential-line"><span><small>Cédula profesional</small><b>{SITE.doctor.license}</b></span><span><small>Práctica privada</small><b>León · 2026</b></span><span><small>Atención</small><b>Mayores de 2 años</b></span></div><div className="profile-actions"><button onClick={() => go("trayectoria")} className="internal-action">Ver trayectoria completa <Icon name="arrow-right" /></button><ExternalAction href={SITE.links.whatsapp} icon="whatsapp" tone="glass">Contactar</ExternalAction></div></div><div className="profile-metrics"><article><b>17</b><span>Años de formación en ciencias médicas</span></article><article><b>10+</b><span>Años de práctica clínica hospitalaria</span></article><article><b>ACLS</b><span>Certificación en reanimación avanzada</span></article></div><p className="origin-note">Nacido en El Paso en 1991 · Originario de Ciudad Juárez · Formación médica desde 2009</p></div>
+        <div className="profile-layout"><div><p className="eyebrow"><span /> Identidad profesional</p><h2>{SITE.doctor.name}</h2><p className="profile-lead">Médico Cirujano con una práctica construida alrededor de la escucha, la explicación clara y el criterio clínico.</p><div className="credential-line"><span><small>Cédula profesional</small><b>{SITE.doctor.license}</b></span><span><small>Práctica privada</small><b>León · 2026</b></span><span><small>Atención</small><b>Mayores de 2 años</b></span></div><div className="profile-actions"><button onClick={() => go("trayectoria")} className="internal-action">Ver experiencia clínica <Icon name="arrow-right" /></button><ExternalAction href={SITE.links.whatsapp} icon="whatsapp" tone="glass">Contactar</ExternalAction></div></div><div className="profile-metrics"><article><b>17</b><span>Años de formación en ciencias médicas</span></article><article><b>10+</b><span>Años de práctica clínica hospitalaria</span></article><article><b>ACLS</b><span>Certificación en reanimación avanzada</span></article></div><p className="origin-note">Nacido en El Paso en 1991 · Originario de Ciudad Juárez · Formación médica desde 2009</p></div>
       </Screen>
 
       <Screen id="trayectoria" page={page} className="screen-career">
         <div className="career-flow" data-scroll-zone>
           <section className="career-intro">
-            <p className="eyebrow"><span /> Trayectoria clínica y formación médica</p>
+            <p className="eyebrow"><span /> Experiencia clínica y formación médica</p>
             <h2>Experiencia que respalda cada valoración.</h2>
             <p className="career-lead">Más de 17 años de formación en ciencias médicas y más de 10 años de práctica clínica hospitalaria, con exposición progresiva a urgencias, cirugía, medicina interna y atención integral.</p>
             <div className="career-metrics">
@@ -173,20 +173,20 @@ export default function Home() {
           </section>
 
           <section className="clinical-experience">
-            <div className="career-section-heading"><small>Experiencia clínica hospitalaria</small><h3>Rotaciones en instituciones públicas y privadas.</h3><p>La trayectoria integra atención de alta demanda, hospitales de referencia, práctica quirúrgica, consulta ambulatoria y docencia clínica.</p></div>
+            <div className="career-section-heading"><small>Experiencia clínica intrahospitalaria</small><h3>Ámbitos público y privado.</h3><p>Práctica clínica hospitalaria con aprendizaje directo de expertos en distintas áreas médicas.</p></div>
             <div className="sector-grid">
               <article><span>01</span><div><small>Sector público</small><b>Atención institucional</b><p>Experiencia en hospitales generales, comunitarios y de seguridad social, con contacto directo con urgencias y atención hospitalaria.</p></div></article>
-              <article><span>02</span><div><small>Sector privado</small><b>Medicina de referencia</b><p>Rotaciones y práctica en instituciones privadas con servicios especializados, cirugía y atención clínica multidisciplinaria.</p></div></article>
+              <article><span>02</span><div><small>Sector privado</small><b>Medicina de referencia</b><p>Experiencia en instituciones privadas con servicios especializados, cirugía y atención clínica multidisciplinaria.</p></div></article>
             </div>
             <div className="practice-areas"><span>Urgencias</span><span>Cirugía general</span><span>Medicina interna</span><span>Atención integral</span><span>Docencia clínica</span></div>
           </section>
 
           <section className="rotations-section">
-            <div className="career-section-heading"><small>Rotaciones y sedes clínicas</small><h3>Recorrido profesional por ciudad.</h3><p>Los hospitales aparecen como respaldo visual de la experiencia, agrupados de manera clara por sede.</p></div>
+            <div className="career-section-heading"><small>Experiencia clínica intrahospitalaria</small><h3>Instituciones por ciudad.</h3><p>Experiencia clínica intrahospitalaria respaldada por algunas de las instituciones más importantes de estas ciudades, donde tuve la oportunidad de aprender de expertos en el área, tanto en el ámbito público como privado.</p></div>
             <div className="career-cities">
               {CLINICAL_CITIES.map((city, cityIndex) => <section className="career-city-section" key={city.id}>
                 <header><span>{String(cityIndex + 1).padStart(2, "0")}</span><div><small>{city.region}</small><h4>{city.city}</h4><p>{city.note}</p></div></header>
-                <div className="hospital-cards continuous">{city.hospitals.map((hospital) => <a key={hospital.name} href={hospital.url} target="_blank" rel="noreferrer" className="hospital-card"><img src={hospital.image} alt={`Fachada o sede de ${hospital.name}`} loading="lazy" referrerPolicy="no-referrer" /><div><small>Sede de rotación clínica</small><strong>{hospital.name}</strong><span>Ver institución <Icon name="arrow-right" size={14} /></span></div></a>)}</div>
+                <div className="hospital-cards continuous">{city.hospitals.map((hospital) => <a key={hospital.name} href={hospital.url} target="_blank" rel="noreferrer" className="hospital-card"><img src={hospital.image} alt={`Fachada de ${hospital.name}`} loading="lazy" referrerPolicy="no-referrer" /><div><strong>{hospital.name}</strong><span>Ver institución <Icon name="arrow-right" size={14} /></span></div></a>)}</div>
               </section>)}
             </div>
           </section>
