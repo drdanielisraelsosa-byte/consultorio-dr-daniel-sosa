@@ -34,7 +34,7 @@ export const SITE = {
   links: {
     whatsapp:
       "https://wa.me/524771235388?text=Hola%20Dr.%20Daniel%2C%20quiero%20agendar%20una%20consulta",
-    calendar: "https://agenda-doctor-sosa.letstrymiso.chatgpt.site",
+    calendar: "https://drdanielisraelsosa-byte.github.io/consultorio-dr-daniel-sosa/agenda/",
     maps: "https://maps.app.goo.gl/kkC9djB9A528P9Ty7?g_st=ac",
     instagram: "https://www.instagram.com/leinadrd/",
     facebook: "https://www.facebook.com/share/1S5U22dAP9/",
