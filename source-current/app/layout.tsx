@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dr-daniel-sosa-consulta.letstrymiso.chatgpt.site"),
   title: "Dr. Daniel Sosa | Consulta Médica Privada",
   description:
-    "Consulta médica privada en León, Guanajuato. Agenda en línea, WhatsApp, servicios, horarios, ubicación y trayectoria profesional.",
+    "Consulta médica privada en León, Guanajuato. Agenda en línea, WhatsApp, servicios, horarios, ubicación y experiencia profesional.",
   openGraph: {
     title: "Dr. Daniel Sosa | Consulta Médica Privada",
     description: "Atención médica clara, humana y personalizada en León, Guanajuato.",
