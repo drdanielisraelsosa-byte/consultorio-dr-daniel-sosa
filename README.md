@@ -1,16 +1,17 @@
 # Dr. Daniel Sosa · Consulta Médica Privada
 
-Repositorio completo del sitio profesional del Dr. Daniel Israel Sosa De Santiago.
+Repositorio espejo y respaldo de los dos sitios del Dr. Daniel Israel Sosa De Santiago.
 
-## Publicaciones
+## Páginas públicas
 
-- Sitio principal: https://dr-daniel-sosa-consulta.letstrymiso.chatgpt.site
-- Espejo en GitHub Pages: https://drdanielisraelsosa-byte.github.io/consultorio-dr-daniel-sosa/
+- Página principal: https://drdanielisraelsosa-byte.github.io/consultorio-dr-daniel-sosa/
+- Agenda de citas: https://drdanielisraelsosa-byte.github.io/consultorio-dr-daniel-sosa/agenda/
 
-## Desarrollo
+## Estructura
 
-- npm run dev: entorno de desarrollo del proyecto original.
-- npm run build: compilación de producción del proyecto original.
-- npm run build:github: genera el espejo estático en github-pages/.
+- Raíz: publicación de la página principal en GitHub Pages.
+- `agenda/index.html`: agenda integrada dentro de la URL de GitHub Pages.
+- `source-current/`: código fuente de la página principal.
+- `source-agenda/`: código fuente de la agenda, incluidas reservaciones, administración, correos y base de datos.
 
-La publicación de GitHub conserva el mismo contenido, identidad visual, navegación, imágenes y enlaces del sitio principal.
+La agenda necesita un servicio dinámico para disponibilidad, reservaciones, correos y datos; GitHub Pages solo sirve archivos estáticos. El repositorio conserva el código de ambos sitios para su mantenimiento o migración.
