@@ -1,14 +1,123 @@
 <!doctype html>
 <html lang="es-MX">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="refresh" content="0;url=https://agenda-doctor-sosa.letstrymiso.chatgpt.site/">
-  <title>Agenda de citas | Dr. Daniel Sosa</title>
-  <style>html,body{margin:0;min-height:100%;background:#06100d;color:#f0ece2;font:16px/1.4 Arial,sans-serif;display:grid;place-items:center}a{color:#ead6aa}</style>
-  <script>location.replace("https://agenda-doctor-sosa.letstrymiso.chatgpt.site/");</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#06100d">
+<title>Agenda de citas | Dr. Daniel Sosa</title>
+<meta name="description" content="Agenda una consulta con el Dr. Daniel Sosa en León, Guanajuato.">
+<link rel="icon" href="../favicon.png">
+<style>
+:root{--bg:#06100d;--ink:#f0ece2;--gold:#ead6aa;--line:#2a3a34;--card:#0c1814}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,Segoe UI,sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--line)}
+header a{color:var(--gold);text-decoration:none;font-size:.9rem}
+h1{margin:0;font-size:1.15rem;font-weight:600}
+.sub{margin:.15rem 0 0;color:#b7c2bb;font-size:.8rem}
+main{max-width:720px;margin:0 auto;padding:1.25rem}
+.note{font-size:.85rem;color:#b7c2bb;margin:0 0 1rem}
+.week{display:flex;gap:.4rem;align-items:center;margin-bottom:.8rem}
+.week button{background:transparent;border:1px solid var(--line);color:var(--gold);border-radius:8px;padding:.35rem .7rem;cursor:pointer}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem;margin-bottom:1rem}
+.day{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:.55rem .3rem;text-align:center;cursor:pointer}
+.day.on{border-color:var(--gold);background:#14241e}
+.day .n{display:block;font-size:1.1rem}
+.day .w{display:block;font-size:.7rem;color:#b7c2bb;text-transform:uppercase}
+.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:.45rem}
+.slot{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:.55rem;cursor:pointer}
+.slot.on{border-color:var(--gold);color:var(--gold)}
+.slot:disabled{opacity:.35;cursor:not-allowed}
+form{margin-top:1.2rem;display:grid;gap:.55rem}
+input{width:100%;padding:.7rem .8rem;border-radius:8px;border:1px solid var(--line);background:#081410;color:var(--ink)}
+.cta{background:var(--gold);color:#06100d;border:0;border-radius:8px;padding:.85rem;font-weight:700;cursor:pointer}
+.cta:disabled{opacity:.4;cursor:not-allowed}
+footer{padding:1.5rem;text-align:center;font-size:.8rem;color:#8a9791}
+</style>
 </head>
 <body>
-  <p>Abriendo la agenda… <a href="https://agenda-doctor-sosa.letstrymiso.chatgpt.site/">Si no abre, entra aquí</a>.</p>
+<header>
+  <div>
+    <h1>Dr. Daniel Sosa</h1>
+    <p class="sub">Médico Cirujano · Céd. 12296387 · León, Gto.</p>
+  </div>
+  <a href="../">Sitio</a>
+</header>
+<main>
+  <p class="note">Lunes a sábado · 09:00–14:00 y 16:00–21:00 · comida 14:00–16:00 · 45 min. Elige día y hora; se confirma por WhatsApp.</p>
+  <div class="week">
+    <button type="button" id="prev">←</button>
+    <strong id="range"></strong>
+    <button type="button" id="next">→</button>
+  </div>
+  <div class="days" id="days"></div>
+  <div class="slots" id="slots"></div>
+  <form id="form">
+    <input name="nombre" required placeholder="Nombre" autocomplete="name">
+    <input name="tel" required placeholder="Tu WhatsApp" inputmode="tel" autocomplete="tel">
+    <button class="cta" id="send" type="submit" disabled>Confirmar por WhatsApp</button>
+  </form>
+</main>
+<footer>Consulta $150 · Plaza del Bosque, Local 101</footer>
+<script>
+const WA='524771235388';
+const TZ='America/Mexico_City';
+const DAYS=['Lun','Mar','Mié','Jue','Vie','Sáb'];
+function nowMX(){return new Date(new Date().toLocaleString('en-US',{timeZone:TZ}))}
+function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function monday(d){const x=new Date(d);const day=x.getDay();const diff=day===0?-6:1-day;x.setDate(x.getDate()+diff);x.setHours(0,0,0,0);return x}
+let weekStart=monday(nowMX());
+let selDate=null, selTime=null;
+function slots(){
+  const out=[];
+  for(let h=9;h<14;h++){out.push(h+':00');if(h<13)out.push(h+':30')}
+  out.push('13:30');
+  for(let h=16;h<21;h++){out.push(h+':00');if(h<20)out.push(h+':30')}
+  return out.filter(t=>t!=='14:00'&&t!=='14:30'&&t!=='15:00'&&t!=='15:30');
+}
+function fmt(t){const [h,m]=t.split(':');const n=+h;const ap=n>=12?'p.m.':'a.m.';const hh=((n+11)%12)+1;return hh+':'+m+' '+ap}
+function renderDays(){
+  const box=document.getElementById('days');
+  box.innerHTML='';
+  const end=new Date(weekStart);end.setDate(end.getDate()+5);
+  document.getElementById('range').textContent=weekStart.toLocaleDateString('es-MX',{day:'numeric',month:'short'})+' – '+end.toLocaleDateString('es-MX',{day:'numeric',month:'short'});
+  const today=ymd(nowMX());
+  for(let i=0;i<6;i++){
+    const d=new Date(weekStart);d.setDate(d.getDate()+i);
+    const id=ymd(d);
+    const b=document.createElement('button');
+    b.type='button';b.className='day'+(selDate===id?' on':'');
+    b.innerHTML='<span class="w">'+DAYS[i]+'</span><span class="n">'+d.getDate()+'</span>';
+    if(id<today){b.disabled=true;b.style.opacity=.35}
+    b.onclick=()=>{selDate=id;selTime=null;renderDays();renderSlots();sync()};
+    box.appendChild(b);
+  }
+}
+function renderSlots(){
+  const box=document.getElementById('slots');box.innerHTML='';
+  if(!selDate){box.innerHTML='<p class="note">Elige un día.</p>';return}
+  const n=nowMX();
+  slots().forEach(t=>{
+    const b=document.createElement('button');
+    b.type='button';b.className='slot'+(selTime===t?' on':'');b.textContent=fmt(t);
+    const [h,m]=t.split(':').map(Number);
+    const dt=new Date(selDate+'T'+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':00');
+    const close=new Date(dt.getTime()-30*60000);
+    if(dt<=n||n>=close){b.disabled=true}
+    b.onclick=()=>{if(b.disabled)return;selTime=t;renderSlots();sync()};
+    box.appendChild(b);
+  });
+}
+function sync(){document.getElementById('send').disabled=!(selDate&&selTime)}
+document.getElementById('prev').onclick=()=>{weekStart.setDate(weekStart.getDate()-7);selDate=selTime=null;renderDays();renderSlots();sync()};
+document.getElementById('next').onclick=()=>{weekStart.setDate(weekStart.getDate()+7);selDate=selTime=null;renderDays();renderSlots();sync()};
+document.getElementById('form').onsubmit=e=>{
+  e.preventDefault();
+  if(!selDate||!selTime)return;
+  const fd=new FormData(e.target);
+  const msg='Hola Dr. Daniel, soy '+fd.get('nombre')+'. Quiero agendar consulta el '+selDate+' a las '+fmt(selTime)+'. Mi WhatsApp: '+fd.get('tel')+'.';
+  location.href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+};
+renderDays();renderSlots();
+</script>
 </body>
 </html>
